@@ -1,0 +1,129 @@
+int botonrojo = 12;
+int botonverde = 11;
+int botonazul =10;
+int ledrgb = 4;
+int ledrojo = 5;
+int ledverde =6;
+int ledazul =7;
+int estado;
+int estado2;
+int estado3;
+
+
+
+void setup()
+{
+ 
+  
+  Serial.begin(9600);
+  pinMode(botonrojo,INPUT_PULLUP);
+  pinMode(ledrojo, OUTPUT);
+   pinMode(botonverde,INPUT_PULLUP);
+  pinMode(ledverde, OUTPUT);
+    pinMode(botonazul,INPUT_PULLUP);
+  pinMode(ledazul, OUTPUT);
+  pinMode(9,OUTPUT);
+
+ 
+
+
+  
+}
+
+void loop()
+{
+estado = digitalRead(botonrojo);
+  if( estado == 0 && estado2  == 1 && estado3  == 1){
+    digitalWrite(ledrojo,HIGH);
+  delay(500);
+    digitalWrite(ledrojo,LOW);  
+  delay(500);
+  }
+        
+       
+
+      
+estado2 = digitalRead(botonverde);
+  if(estado == 1 && estado2  == 0 && estado3  == 1 ){ 
+  digitalWrite(ledverde,HIGH);
+  delay(500);
+  digitalWrite(ledverde,LOW);
+  delay(500);
+  }
+        
+
+        estado3 = digitalRead(botonazul);
+  if( estado == 1 && estado2  == 1 && estado3  == 0 ){
+  digitalWrite(ledazul,HIGH);
+  delay(500);
+  digitalWrite(ledazul,LOW);
+  delay(500);
+  }
+  
+         
+  
+  
+  
+  
+  if( estado == 1 && estado2  == 1 && estado3  == 1 ){
+  digitalWrite(ledrojo,HIGH);
+     digitalWrite(ledverde,HIGH);
+     digitalWrite(ledazul,HIGH);
+  delay(500);
+  digitalWrite(ledrojo,LOW);
+    digitalWrite(ledverde,LOW);
+    digitalWrite(ledazul,LOW);
+  delay(500);
+  } 
+    
+    
+    
+    
+   
+     if( estado == 0 && estado2  == 0 && estado3  == 0 ){
+  digitalWrite(ledrojo,HIGH);
+     digitalWrite(ledverde,HIGH);
+     digitalWrite(ledazul,HIGH);
+  delay(500);
+  digitalWrite(ledrojo,LOW);
+    digitalWrite(ledverde,LOW);
+    digitalWrite(ledazul,LOW);
+  delay(500);
+     }
+    
+    
+     if( estado == 1 && estado2  == 0 && estado3  == 0 ){
+     digitalWrite(ledverde,HIGH);
+     digitalWrite(ledazul,HIGH);
+  delay(500);
+    digitalWrite(ledverde,LOW);
+    digitalWrite(ledazul,LOW);
+       delay(500);
+     }
+    
+    
+    
+        if( estado == 0 && estado2  == 1 && estado3  == 0 ){
+  digitalWrite(ledrojo,HIGH);
+     digitalWrite(ledazul,HIGH);
+  delay(500);
+  digitalWrite(ledrojo,LOW);
+    digitalWrite(ledazul,LOW);
+  delay(500);
+  }
+    
+    
+    
+    
+        if( estado == 0 && estado2  == 0 && estado3  == 1 ){
+  digitalWrite(ledrojo,HIGH);
+     digitalWrite(ledverde,HIGH);    
+  delay(500);
+  digitalWrite(ledrojo,LOW);
+    digitalWrite(ledverde,LOW);
+  delay(500);
+        }
+   
+    
+ 
+  }
